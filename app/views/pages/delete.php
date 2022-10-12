@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Titulo de la vista -->
-    <title>Editar</title>
+    <title>Borrar</title>
 
     <!-- Link css -->
     <link rel="stylesheet" href="<?php echo PATH_URL; ?>/css/login/styles.css">
@@ -18,7 +18,7 @@
 </head>
 
 <body>
-    <form action="<?php echo PATH_URL; ?>/edit/editUser/<?php echo $data['id']?>" method="POST">
+    <form action="<?php echo PATH_URL; ?>/delete/deleteUser/<?php echo $data['id'] ?>" method="POST">
 
         <img src="<?php echo PATH_URL; ?>/img/logoRegistroAzul.jpg" class="img-fluid rounded" alt="logoRegistro">
         <h4>Asisteril</h4><br>
@@ -48,7 +48,7 @@
         </div>
 
         <!-- Submit button -->
-        <button type="submit" class="btn btn-secondary btn-block mb-4" style="background-color: #008374; border-color: #008374;">Editar</button>
+        <button type="submit" class="btn btn-danger btn-block mb-4">Borrar</button>
 
         <div class="text-center">
             <a href="<?php echo PATH_URL; ?>/admin">

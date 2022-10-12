@@ -50,4 +50,37 @@ class Edit extends MainController
             $this->views('pages/edit', $data);
         }
     }
+
+    /*********************************************
+            FUNCIÓN PARA BORRAR LA CLINICA
+     **********************************************/
+    public function deleteUser($params)
+    {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            // Obtener la información de usario desde el modelo 
+            $users = $this->userModel->getUser($params[0]);
+
+            $data = [
+                'id' => $users->id,
+                'name' => $users->Nombre,
+                'phone' => $users->Telefono,
+                'email' => $users->Email,
+                'pass' => $users->Clave
+            ];
+
+
+            $data = [
+                'id' => $params[0]
+            ];
+
+            if ($this->userModel->deleteUserById($params[0])) {
+                redirect('/admin');
+            } else {
+                die('¡UPS! Algo salió mal :(');
+                return;
+            }
+        }
+        
+        $this->views('pages/edit', $data);
+    }
 }
