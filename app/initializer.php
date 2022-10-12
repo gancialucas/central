@@ -1,6 +1,6 @@
 <?php
     // Cargamos nuestras librerias
-    require_once 'config/configuations.php';
+    require_once 'config/configurations.php';
 
     require_once 'helpers/url_helper.php';
 
