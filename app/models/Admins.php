@@ -7,9 +7,9 @@ class Admins {
     }
 
     public function getUser(){
-        $this->db->query('SELECT * FROM users ');
+        $this->db->query('SELECT * FROM users');
         $results = $this->db->registers();
-        
+
         return $results;
     }
 }

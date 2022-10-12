@@ -36,8 +36,10 @@
 
     <!-- Register buttons -->
     <div class="text-center">
+        <a href="<?php echo PATH_URL; ?>/admin">Entrar</a>
         <p>¿No eres miembro? <a href="<?php echo PATH_URL; ?>/register">Regístrate</a></p>
     </div>
+
     <div class="text-center">
         <a href="<?php echo PATH_URL; ?>">
             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="black" class="bi bi-arrow-left-circle" viewBox="0 0 16 16">

@@ -635,23 +635,59 @@
                             <!-- Approach -->
                             <div class="card shadow mb-4">
                                 <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">Clínicas Registradas</h6>
+                                    <h6 class="m-0 font-weight-bold text-primary">Algo</h6>
                                 </div>
-                                <div class="card-body">
-                                    <a href="register"><button class="btn btn-primary float-end">Agregar</button></a>
 
-                                    
+                                <div class="card-body">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus beatae eius deleniti similique quibusdam, ipsa ipsum. Labore nam in ab provident, id sequi vitae! Maiores dolor assumenda qui ut neque!
                                 </div>
                             </div>
-
                         </div>
                     </div>
-
                 </div>
                 <!-- /.container-fluid -->
-
             </div>
             <!-- End of Main Content -->
+
+            <div class="container">
+                <div class="card shadow mb-4">
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-primary">Clínicas Registradas</h6>
+                    </div>
+
+                    <div class="card-body">
+                        <a href="<?php echo PATH_URL; ?>/register"><button class="btn btn-primary">Agregar</button></a><br><br>
+                        
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Id</th>
+                                        <th>Nombre</th>
+                                        <th>Email</th>
+                                        <th>Teléfono</th>
+                                        <th></th>
+                                        <th>Acciones</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <?php foreach ($data['users'] as $user) : ?>
+                                        <tr>
+                                            <td><?php echo $user->id; ?></td>
+                                            <td><?php echo $user->Nombre; ?></td>
+                                            <td><?php echo $user->Email; ?></td>
+                                            <td><?php echo $user->Telefono; ?></td>
+                                            <td><a href="<?php echo PATH_URL; ?> /pages/edit/ <?php echo $user->id; ?>">Editar</a></td>
+                                            <td><a href="<?php echo PATH_URL; ?> /pages/delete/ <?php echo $user->id; ?>">Borrar</a></td>
+                                        </tr>
+                                    <?php endforeach; ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <!-- Footer -->
             <footer class="sticky-footer bg-white">

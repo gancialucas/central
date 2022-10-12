@@ -15,7 +15,6 @@
             FUNCIÓN PARA INSERTAR UN NUEVO USARIO
         **********************************************/
         public function insert(){
-
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $data = [
                     'name' => trim($_POST['name']),
@@ -25,7 +24,6 @@
                 ];
 
                 if (!$this->userModel->insertUser($data)) {
-
                     die('¡UPS! Algo salió mal :(');
                     return;
                 }
