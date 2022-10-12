@@ -8,12 +8,7 @@
         /*********************************************
             FUNCIÓN PARA MOSTAR PAGINA OPENING
         **********************************************/
-        public function index(){
-            // Obtener los usuarios
-            // $users = $this->userModel->getUsers();
-            // $data = [
-            //     'users' => $users
-            // ];            
+        public function index(){         
             $this -> views('pages/opening');
         }
     }

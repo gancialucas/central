@@ -18,7 +18,7 @@
 </head>
 
 <body>
-    <form action="<?php echo PATH_URL; ?>/edit/edit/ <?php echo $data['id']; ?>" method="POST">
+    <form action="<?php echo PATH_URL; ?>/edit/editUser/<?php echo $data['id']?>" method="POST">
 
         <img src="<?php echo PATH_URL; ?>/img/logoRegistroAzul.jpg" class="img-fluid rounded" alt="logoRegistro">
         <h4>Asisteril</h4><br>
@@ -27,24 +27,24 @@
         <div class="row mb-4">
             <div class="col">
                 <div class="form-outline">
-                    <input required type="text" name="name" class="form-control" value="<?php echo $data['Nombre']; ?>" />
+                    <input required type="text" name="name" class="form-control" value="<?php echo $data['name']; ?>" />
                 </div>
             </div>
             <div class="col">
                 <div class="form-outline">
-                    <input required type="text" name="phone" class="form-control" value="<?php echo $data['Telefono']; ?>" />
+                    <input required type="text" name="phone" class="form-control" value="<?php echo $data['phone']; ?>" />
                 </div>
             </div>
         </div>
 
         <!-- Email input -->
         <div class="form-outline mb-4">
-            <input required type="email" name="email" class="form-control" value="<?php echo $data['Email']; ?>" />
+            <input required type="email" name="email" class="form-control" value="<?php echo $data['email']; ?>" />
         </div>
 
         <!-- Contraseña input -->
         <div class="form-outline mb-4">
-            <input required type="password" name="pass" class="form-control" value="<?php echo $data['Clave']; ?>" />
+            <input required type="password" name="pass" class="form-control" value="<?php echo $data['pass']; ?>" />
         </div>
 
         <!-- Submit button -->

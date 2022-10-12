@@ -17,32 +17,27 @@ class Edit extends MainController
     /*********************************************
         FUNCIÓN PARA EDITAR AL USARIO
      **********************************************/
-    public function edit($id)
+    public function editUser($params)
     {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
             $data = [
-                'id' => $id,
+                'id' => $params[0],
                 'name' => trim($_POST['name']),
                 'phone' => trim($_POST['phone']),
                 'email' => trim($_POST['email']),
                 'pass' => trim($_POST['pass'])
             ];
 
-            $this->views('pages/edit', $data);
-
-            if ($this->userModel->editUser($data)) {
-                redirect('/pages/admin');
+            if ($this->userModel->editUserById($params[0], trim($_POST['name']), trim($_POST['phone']), trim($_POST['email']), trim($_POST['pass']))) {
+                redirect('/admin');
             } else {
                 die('¡UPS! Algo salió mal :(');
                 return;
             }
         } else {
-            // Obtener lo usuarios 
-            $users = $this->userModel->getUser();
-
-            $data = [
-                'users' => $users
-            ];
+            // Obtener la información de usario desde el modelo 
+            $users = $this->userModel->getUser($params[0]);
 
             $data = [
                 'id' => $users->id,

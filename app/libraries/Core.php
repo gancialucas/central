@@ -45,7 +45,12 @@ class Core
         }
 
         // CAMBIO EL PARAMETRO
-        $this->parameters = $url ? array_values($url) : [];
+        if (isset($url[2])) {
+            for ($i = 0; $i < count($url); $i++) {
+                $this->parameters[$i] = $url[$i + 2];
+            }
+        }
+
         call_user_func([$this->activeController, $this->activeMethod], $this->parameters);
     }
 
