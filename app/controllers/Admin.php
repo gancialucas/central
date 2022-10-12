@@ -34,21 +34,21 @@ class Admin extends MainController{
             if (!$this->userModel->editUser($data)) {
                 die('¡UPS! Algo salió mal :(');
                 return;
+            } else {            
+                // Obtener información de usario desde el modelo
+                $users = $this->userModel->getUser($id);
+                
+                $data = [
+                    'id' => $users->id,
+                    'name' => $users->Nombre,
+                    'phone' => $users->Telefono,
+                    'email' => $users->Email,
+                    'pass' => $users->Clave
+                ];
+    
+                $this->views('pages/edit', $data);
             }
-        } else {            
-            // Obtener información de usario desde el modelo
-            $users = $this->userModel->getUser($id);
-            
-            $data = [
-                'id' => $users->id,
-                'name' => $users->Nombre,
-                'phone' => $users->Telefono,
-                'email' => $users->Email,
-                'pass' => $users->Clave
-            ];
-
-            $this->views('pages/edit', $data);
-        }
+        } 
 
         redirect('/pages/login');
     }

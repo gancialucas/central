@@ -678,8 +678,8 @@
                                             <td><?php echo $user->Nombre; ?></td>
                                             <td><?php echo $user->Email; ?></td>
                                             <td><?php echo $user->Telefono; ?></td>
-                                            <td><a href="<?php echo PATH_URL; ?> /pages/edit/ <?php echo $user->id; ?>">Editar</a></td>
-                                            <td><a href="<?php echo PATH_URL; ?> /pages/delete/ <?php echo $user->id; ?>">Borrar</a></td>
+                                            <td><a href="<?php echo PATH_URL; ?>/edit/<?php echo $user->id; ?>">Editar</a></td>
+                                            <td><a href="<?php echo PATH_URL; ?>/pages/delete/<?php echo $user->id; ?>">Borrar</a></td>
                                         </tr>
                                     <?php endforeach; ?>
                                 </tbody>

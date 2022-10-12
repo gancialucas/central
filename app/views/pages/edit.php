@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Titulo de la vista -->
-    <title>Registrarse</title>
+    <title>Editar</title>
 
     <!-- Link css -->
     <link rel="stylesheet" href="<?php echo PATH_URL; ?>/css/login/styles.css">
@@ -18,7 +18,7 @@
 </head>
 
 <body>
-    <form action="<?php echo PATH_URL; ?>/register/insert" method="POST">
+    <form action="<?php echo PATH_URL; ?>/edit/edit/ <?php echo $data['id']; ?>" method="POST">
 
         <img src="<?php echo PATH_URL; ?>/img/logoRegistroAzul.jpg" class="img-fluid rounded" alt="logoRegistro">
         <h4>Asisteril</h4><br>
@@ -27,31 +27,31 @@
         <div class="row mb-4">
             <div class="col">
                 <div class="form-outline">
-                    <input required type="text" id="form3Example1" name="name" class="form-control" placeholder="Clínica" />
+                    <input required type="text" name="name" class="form-control" value="<?php echo $data['Nombre']; ?>" />
                 </div>
             </div>
             <div class="col">
                 <div class="form-outline">
-                    <input required type="text" id="form3Example2" name="phone" class="form-control" placeholder="Teléfono" />
+                    <input required type="text" name="phone" class="form-control" value="<?php echo $data['Telefono']; ?>" />
                 </div>
             </div>
         </div>
 
         <!-- Email input -->
         <div class="form-outline mb-4">
-            <input required type="email" id="form3Example3" name="email" class="form-control" placeholder="Email" />
+            <input required type="email" name="email" class="form-control" value="<?php echo $data['Email']; ?>" />
         </div>
 
         <!-- Contraseña input -->
         <div class="form-outline mb-4">
-            <input required type="password" id="form3Example4" name="pass" class="form-control" placeholder="Contraseña" />
+            <input required type="password" name="pass" class="form-control" value="<?php echo $data['Clave']; ?>" />
         </div>
 
         <!-- Submit button -->
-        <button type="submit" name="registrarse" value="registrarse" class="btn btn-secondary btn-block mb-4" style="background-color: #008374; border-color: #008374;">Registrarse</button>
+        <button type="submit" name="registrarse" value="registrarse" class="btn btn-secondary btn-block mb-4" style="background-color: #008374; border-color: #008374;">Editar</button>
 
         <div class="text-center">
-            <a href="<?php echo PATH_URL; ?>">
+            <a href="<?php echo PATH_URL; ?>/admin">
                 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="black" class="bi bi-arrow-left-circle" viewBox="0 0 16 16">
                     <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z" />
                 </svg>
